@@ -36,7 +36,7 @@ def create_task():  # funcao que vai ser executada, que e responsavel por criar 
     task_id_control += 1
     tasks.append(new_task)
     print(tasks)
-    return jsonify({"message": "Nova tarefa criada com sucesso"})
+    return jsonify({"message": "Nova tarefa criada com sucesso", "id": new_task.id})
 
 
 # em Read geralmente temos duas listagens: 1 para listagem de todas as tarefas  ou ler apenas um recurso especifico
@@ -108,5 +108,5 @@ def delete_task(id):
 
 # So se for rodar de forma manual; apenas para conhecimento (nao e recomendado disponibilizar para clientes reais)
 if __name__ == "__main__":
-    # Essa propriedade debug vai nos ajudar a visualizar muitas informacoes para entender o que esta acontcendo no servidor web
+    # Essa propriedade debug vai nos ajudar a visualizar muitas informacoes para entender o que esta acontecendo no servidor web
     app.run(debug=True)
